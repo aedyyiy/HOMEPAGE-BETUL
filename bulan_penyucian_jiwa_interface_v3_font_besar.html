@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#082f2b">
+<title>Bulan Penyucian Jiwa | Pendidikan Islam Tahun 4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{
+ --forest:#082f2b;--forest2:#104b40;--emerald:#167765;--mint:#c5dfce;
+ --lime:#dce9b9;--paper:#f7f6ef;--white:#fffefa;--ink:#173a34;
+ --muted:#70827a;--line:#e2e8df;--gold:#c7a86b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.progress{position:fixed;z-index:20;top:0;left:0;height:3px;width:0;background:var(--lime);box-shadow:0 0 12px #dce9b9aa}
+header{position:sticky;top:0;z-index:15;background:#082f2bf2;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff16;color:white}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font:800 13px Manrope;letter-spacing:.09em}
+.brand-mark{width:38px;height:38px;border:1px solid #a9cfba88;border-radius:14px;display:grid;place-items:center;color:var(--lime);font-size:21px;transform:rotate(-8deg)}
+.brand small{display:block;font:500 9px 'DM Sans';letter-spacing:.17em;color:#a9c7b8;margin-top:4px}
+.links{display:flex;gap:30px;color:#d4e2d9;font-size:12px}
+.links a{opacity:.78;transition:.25s}.links a:hover{opacity:1;color:var(--lime)}
+.nav-cta{padding:11px 17px;border:1px solid #a9cfba88;border-radius:99px;font-size:13px;transition:.25s}
+.nav-cta:hover{background:var(--lime);color:var(--forest)}
+.hero{background:var(--forest);color:white;position:relative;overflow:hidden;min-height:650px}
+.hero:before{content:"";position:absolute;width:700px;height:700px;border:1px solid #d2e6d21b;border-radius:50%;right:-210px;top:-300px;box-shadow:0 0 0 70px #d2e6d20a,0 0 0 145px #d2e6d207}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,#1b6a5740,transparent 48%),linear-gradient(110deg,transparent 60%,#ffffff04)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:40px;padding:84px 0 90px}
+.eyebrow{display:flex;align-items:center;gap:11px;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:#b9d8c5}
+.eyebrow:before{content:"";height:1px;width:28px;background:var(--gold)}
+h1{font:800 clamp(45px,6vw,78px)/1.02 Manrope;letter-spacing:-.065em;margin:27px 0 22px;max-width:720px}
+h1 em{font:600 .95em 'Playfair Display',serif;color:var(--lime);letter-spacing:-.04em}
+.lead{font-size:16px;line-height:1.85;color:#d0e0d7;max-width:540px;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 19px;border-radius:99px;font:700 11px 'DM Sans';transition:transform .25s,background .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px #0002}
+.btn-light{background:var(--lime);color:var(--forest)}
+.btn-outline{border:1px solid #b7d4c4a0;color:#f2f5ef}
+.hero-note{margin-top:38px;display:flex;align-items:center;gap:12px;color:#a9c5b7;font-size:12px;letter-spacing:.08em}
+.hero-note:before{content:"";width:34px;height:1px;background:#8db39d}
+.visual{height:420px;position:relative;display:grid;place-items:center}
+.visual-halo{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#b6d9b52b,transparent 68%);filter:blur(4px)}
+.moon-wrap{position:relative;width:230px;height:230px;display:grid;place-items:center;animation:drift 7s ease-in-out infinite}
+.moon{width:205px;height:205px;border-radius:50%;background:linear-gradient(145deg,#f1edc9,#b7d5b7 70%,#82b9a1);box-shadow:0 0 70px #cde5c333,inset -15px -15px 30px #638c7b30;position:relative}
+.moon:after{content:"";position:absolute;width:188px;height:188px;border-radius:50%;background:var(--forest2);left:61px;top:-24px}
+.orbit{position:absolute;width:330px;height:330px;border:1px solid #d5e9d52e;border-radius:50%;transform:rotate(-24deg)}
+.orbit:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--lime);top:44px;left:48px;box-shadow:0 0 20px var(--lime)}
+.orbit-two{position:absolute;width:410px;height:190px;border:1px solid #d5e9d51c;border-radius:50%;transform:rotate(35deg)}
+.star{position:absolute;color:var(--lime);font-size:25px;animation:twinkle 3s ease-in-out infinite}
+.star.s1{top:48px;right:65px}.star.s2{bottom:65px;left:40px;font-size:17px;animation-delay:1s}
+.floating-label{position:absolute;right:0;bottom:40px;border:1px solid #d2e4d52b;background:#ffffff0b;backdrop-filter:blur(10px);padding:13px 16px;border-radius:14px;color:#d6e6dc;font-size:11px;letter-spacing:.13em}
+.side-index{position:absolute;left:0;bottom:48px;color:#89a99a;font:600 10px Manrope;letter-spacing:.18em;writing-mode:vertical-rl;transform:rotate(180deg)}
+.intro{padding:105px 0 90px}
+.section-head{display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:end;margin-bottom:42px}
+.kicker{font-size:11px;letter-spacing:.2em;color:var(--emerald);font-weight:700;text-transform:uppercase}
+.section-head h2{font:700 clamp(30px,4vw,47px)/1.13 Manrope;letter-spacing:-.05em;margin:14px 0 0;color:var(--forest)}
+.section-head h2 span{font:600 1em 'Playfair Display',serif;color:var(--emerald)}
+.section-head p{max-width:430px;color:var(--muted);font-size:15px;line-height:1.85;margin:0}
+.topic-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}
+.topic{grid-column:span 4;min-height:230px;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:25px 25px 24px;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.topic:nth-child(2),.topic:nth-child(5){transform:translateY(22px)}
+.topic:hover{transform:translateY(-6px);border-color:#a9cbb7;box-shadow:0 20px 45px #173a3410}
+.topic:nth-child(2):hover,.topic:nth-child(5):hover{transform:translateY(16px)}
+.topic:after{content:"";position:absolute;width:145px;height:145px;border:1px solid #dce9df;border-radius:50%;right:-72px;bottom:-80px;transition:transform .5s}
+.topic:hover:after{transform:scale(1.35)}
+.topic-top{display:flex;justify-content:space-between;align-items:center}
+.topic-no{font:700 10px Manrope;letter-spacing:.16em;color:#88a395}
+.topic-icon{width:42px;height:42px;border-radius:14px;background:#edf3e9;display:grid;place-items:center;color:var(--emerald);font-size:20px}
+.topic h3{font:700 19px Manrope;color:var(--forest);margin:25px 0 9px;letter-spacing:-.02em}
+.topic p{font-size:14px;line-height:1.8;color:var(--muted);margin:0;max-width:290px;position:relative;z-index:1}
+.topic-arrow{position:absolute;right:24px;bottom:22px;color:#8ca99a;font-size:16px;transition:transform .25s}
+.topic:hover .topic-arrow{transform:translate(4px,-4px)}
+.quote-band{padding:66px 0;background:#e9eee5;position:relative;overflow:hidden}
+.quote-band:after{content:"“";position:absolute;right:8%;top:-70px;font:250px 'Playfair Display';color:#d5e2d3}
+.quote-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.quote{font:600 clamp(21px,3.2vw,34px)/1.4 'Playfair Display',serif;color:var(--forest);max-width:760px;letter-spacing:-.02em}
+.quote span{color:var(--emerald)}
+.quote-ref{font-size:11px;color:#70877a;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.learning{padding:95px 0}
+.learning-panel{background:var(--forest);color:white;border-radius:22px;padding:52px 55px;display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center;position:relative;overflow:hidden}
+.learning-panel:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #d1e4d51e;border-radius:50%;right:-120px;top:-180px;box-shadow:0 0 0 48px #d1e4d509,0 0 0 96px #d1e4d506}
+.learning-panel .kicker{color:#b7d8c4}
+.learning-panel h2{font:700 clamp(25px,3vw,34px)/1.2 Manrope;margin:13px 0;color:#f3f6ee;letter-spacing:-.04em}
+.learning-panel p{font-size:15px;line-height:1.85;color:#c0d3c9;max-width:650px;margin:0}
+.panel-action{position:relative;z-index:1}
+.panel-action a{background:var(--lime);color:var(--forest);white-space:nowrap}
+footer{background:#052521;color:#c1d6cb;padding:27px 0;font-size:10px}
+.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.foot strong{font:700 12px Manrope;letter-spacing:.1em}.foot span{color:#91afa1}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-13px) rotate(2deg)}}
+@keyframes twinkle{0%,100%{opacity:.5;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+@media(max-width:850px){
+ .hero-grid{grid-template-columns:1fr;gap:5px;padding:70px 0 45px}.visual{height:340px}
+ .section-head{grid-template-columns:1fr;gap:18px}.topic{grid-column:span 6}.topic:nth-child(2),.topic:nth-child(5){transform:none}
+ .topic:nth-child(2):hover,.topic:nth-child(5):hover{transform:translateY(-6px)}
+ .learning-panel{grid-template-columns:1fr;padding:38px 32px}.panel-action{justify-self:start}
+}
+@media(max-width:560px){
+ .wrap{width:calc(100% - 34px)}.nav{height:68px}.links{display:none}.nav-cta{font-size:10px;padding:9px 12px}
+ .brand{font-size:11px}.brand-mark{width:34px;height:34px}
+ .hero-grid{padding:58px 0 35px}h1{font-size:clamp(42px,12vw,58px)}
+ .visual{height:285px}.moon-wrap{transform:scale(.82)}.floating-label{right:2px;bottom:18px}
+ .intro,.learning{padding:70px 0}.topic-grid{gap:11px}.topic{grid-column:span 12;min-height:190px;padding:22px}
+ .topic h3{margin-top:18px}.quote-inner{display:block}.quote-ref{display:block;margin-top:20px}
+ .quote-band{padding:48px 0}.learning-panel{padding:30px 24px;border-radius:17px}
+ .foot{display:block;line-height:2}.foot span{display:block}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#utama"><span class="brand-mark">☾</span><span>BULAN PENYUCIAN JIWA<small>PENDIDIKAN ISLAM · TAHUN 4</small></span></a>
+  <nav class="links"><a href="#utama">Utama</a><a href="#pembelajaran">Penerokaan</a><a href="#matlamat">Matlamat</a></nav>
+  <a class="nav-cta" href="#pembelajaran">Teroka topik&nbsp; ↗</a>
+ </div>
+</header>
+<main>
+<section class="hero" id="utama">
+ <div class="wrap hero-grid">
+  <div class="reveal">
+   <div class="eyebrow">Siri pembelajaran digital · 01</div>
+   <h1>BULAN<br>PENYUCIAN <em>JIWA.</em></h1>
+   <p class="lead">Ramadan bukan sekadar menahan lapar dan dahaga. Ia mendidik kita menjadi insan yang lebih sabar, berdisiplin dan bersyukur. Mari kenali ibadah puasa serta hayati keistimewaan bulan yang penuh keberkatan ini.</p>
+   <div class="hero-actions"><a class="btn btn-light" href="#pembelajaran">Mulakan penerokaan <span>↘</span></a><a class="btn btn-outline" href="#matlamat">Lihat matlamat</a></div>
+   <div class="hero-note">PENDIDIKAN ISLAM &nbsp; / &nbsp; TAHUN 4 &nbsp; / &nbsp; PUASA</div>
+  </div>
+  <div class="visual reveal" aria-label="Ilustrasi bulan sabit Ramadan">
+   <div class="visual-halo"></div><div class="orbit"></div><div class="orbit-two"></div>
+   <div class="moon-wrap"><div class="moon"></div></div>
+   <div class="star s1">✧</div><div class="star s2">✦</div>
+   <div class="floating-label">RAMADAN · ILMU · AMALAN</div>
+  </div>
+ </div>
+ <div class="side-index">01 — SELAMAT DATANG</div>
+</section>
+<section class="intro wrap" id="pembelajaran">
+ <div class="section-head reveal">
+  <div><div class="kicker">01 / Peta pembelajaran</div><h2>Terokai ilmu.<br><span>Hayati hikmah.</span></h2></div>
+  <p>Melalui tajuk ini, murid akan diperkenalkan kepada asas ibadah puasa Ramadan dan nilai-nilai murni yang dapat diamalkan dalam kehidupan seharian.</p>
+ </div>
+ <div class="topic-grid">
+  <article class="topic reveal"><div class="topic-top"><span class="topic-no">TOPIK 01</span><span class="topic-icon">☾</span></div><h3>Pengertian puasa</h3><p>Memahami maksud puasa dari segi bahasa dan istilah syarak serta tujuan umat Islam berpuasa.</p><span class="topic-arrow">↗</span></article>
+  <article class="topic reveal"><div class="topic-top"><span class="topic-no">TOPIK 02</span><span class="topic-icon">✧</span></div><h3>Hukum berpuasa</h3><p>Mengenali hukum puasa Ramadan dan kewajipan umat Islam menunaikan ibadah ini.</p><span class="topic-arrow">↗</span></article>
+  <article class="topic reveal"><div class="topic-top"><span class="topic-no">TOPIK 03</span><span class="topic-icon">◇</span></div><h3>Syarat dan rukun puasa</h3><p>Mempelajari syarat wajib, syarat sah serta rukun puasa sebagai asas pelaksanaan ibadah.</p><span class="topic-arrow">↗</span></article>
+  <article class="topic reveal"><div class="topic-top"><span class="topic-no">TOPIK 04</span><span class="topic-icon">⌁</span></div><h3>Perkara membatalkan puasa</h3><p>Mengenal pasti perkara yang membatalkan puasa supaya ibadah dapat dijaga dengan sempurna.</p><span class="topic-arrow">↗</span></article>
+  <article class="topic reveal"><div class="topic-top"><span class="topic-no">TOPIK 05</span><span class="topic-icon">♡</span></div><h3>Adab ketika berpuasa</h3><p>Mengamalkan adab seperti menjaga tutur kata, bersabar, mengawal diri dan menghormati orang lain.</p><span class="topic-arrow">↗</span></article>
+  <article class="topic reveal"><div class="topic-top"><span class="topic-no">TOPIK 06</span><span class="topic-icon">✦</span></div><h3>Hikmah berpuasa</h3><p>Menghayati hikmah puasa dalam membentuk rasa syukur, keinsafan, disiplin dan keprihatinan.</p><span class="topic-arrow">↗</span></article>
+ </div>
+</section>
+<section class="quote-band" id="matlamat"><div class="wrap quote-inner reveal"><div class="quote">“Puasa mendidik jiwa, membentuk <span>akhlak</span> dan menyemai rasa syukur dalam diri.”</div><div class="quote-ref">Matlamat pembelajaran</div></div></section>
+<section class="learning"><div class="wrap"><div class="learning-panel reveal"><div><div class="kicker">02 / Hasil pembelajaran</div><h2>Ilmu yang difahami,<br>amalan yang dihayati.</h2><p>Di akhir pembelajaran, murid diharapkan dapat menerangkan asas ibadah puasa, mengenal pasti perkara berkaitan puasa Ramadan dan menunjukkan sikap positif seperti sabar, amanah serta berdisiplin dalam kehidupan seharian.</p></div><div class="panel-action"><a class="btn" href="#utama">Kembali ke atas ↑</a></div></div></div></section>
+</main>
+<footer><div class="wrap foot"><strong>BULAN PENYUCIAN JIWA</strong><span>Modul pembelajaran digital · Pendidikan Islam Tahun 4</span></div></footer>
+<script>
+const progress=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-window.innerHeight;
+ progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%';
+},{passive:true});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+ if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
